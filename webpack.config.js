@@ -13,7 +13,8 @@ module.exports = {
           About: path.resolve(__dirname, "app/components/About.jsx"), 
           Examples: path.resolve(__dirname, "app/components/Examples.jsx"),
           WeatherForm: path.resolve(__dirname, "app/components/WeatherForm.jsx"),
-          WaetherMessage: path.resolve(__dirname, "app/components/WaetherMessage.jsx"),
+          WeatherMessage: path.resolve(__dirname, "app/components/WeatherMessage.jsx"),
+          OpenWeather: path.resolve(__dirname, "app/api/openWeatherMap.jsx"),
         },
         extensions: ['.js', '.jsx']
     },
@@ -28,5 +29,6 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/
             }
         ]
-    }
+    },
+    devtool: 'eval'
 };
