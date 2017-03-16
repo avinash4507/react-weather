@@ -4,7 +4,9 @@ var Main = require('Main');
 var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router')
+var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+
+require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css')
 
 ReactDOM.render((
     <Router history={hashHistory}>
