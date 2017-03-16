@@ -889,21 +889,21 @@ eval("/**\n * Copyright 2013-present, Facebook, Inc.\n * All rights reserved.\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(5);\n\nvar About = React.createClass({\n    displayName: 'About',\n\n    render: function render() {\n        return React.createElement(\n            'h1',\n            null,\n            'About Component'\n        );\n    }\n});\n\nmodule.exports = About;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/About.jsx\n// module id = 117\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/About.jsx?");
+eval("\n\nvar React = __webpack_require__(5);\nvar About = function About(props) {\n    return React.createElement(\n        'h1',\n        null,\n        'About Component'\n    );\n};\n\nmodule.exports = About;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/About.jsx\n// module id = 117\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/About.jsx?");
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(5);\n\nvar Examples = React.createClass({\n    displayName: 'Examples',\n\n    render: function render() {\n        return React.createElement(\n            'h4',\n            null,\n            'Examples Component'\n        );\n    }\n});\n\nmodule.exports = Examples;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Examples.jsx\n// module id = 118\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/Examples.jsx?");
+eval("\n\nvar React = __webpack_require__(5);\n\nvar Examples = function Examples(props) {\n    return React.createElement(\n        'h4',\n        null,\n        'Examples Component'\n    );\n};\n\nmodule.exports = Examples;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Examples.jsx\n// module id = 118\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/Examples.jsx?");
 
 /***/ }),
 /* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(5);\nvar Navigation = __webpack_require__(141);\n\nvar Main = React.createClass({\n    displayName: 'Main',\n\n    render: function render() {\n        return React.createElement(\n            'div',\n            null,\n            React.createElement(Navigation, null),\n            React.createElement(\n                'h1',\n                null,\n                'Main Component!!'\n            ),\n            this.props.children\n        );\n    }\n});\n\nmodule.exports = Main;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Main.jsx\n// module id = 119\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/Main.jsx?");
+eval("\n\nvar React = __webpack_require__(5);\nvar Navigation = __webpack_require__(141);\n\nvar Main = function Main(props) {\n    return React.createElement(\n        'div',\n        null,\n        React.createElement(Navigation, null),\n        React.createElement(\n            'h1',\n            null,\n            'Main Component!!'\n        ),\n        props.children\n    );\n};\n\nmodule.exports = Main;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Main.jsx\n// module id = 119\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/Main.jsx?");
 
 /***/ }),
 /* 120 */
@@ -1049,14 +1049,14 @@ eval("\n\n/**\n * Syntactic sugar for invoking a function and expanding an array
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar axios = __webpack_require__(122);\n\nvar OPEM_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=a1d8ead71fc748d679a64544da008147&units=imperial';\n\nmodule.exports = {\n    getTemp: function getTemp(location) {\n        var encodedLocation = encodeURIComponent(location);\n        var requestUrl = OPEM_WEATHER_MAP_URL + '&q=' + encodedLocation;\n\n        return axios.get(requestUrl).then(function (res) {\n            debugger;\n            if (res.data.cod && res.data.message) {\n                throw new Error(res.data.messaage);\n            } else {\n                return res.data.main.temp;\n            }\n        }, function (error) {\n            throw new Error(error.data.messaage);\n        });\n    }\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/api/openWeatherMap.jsx\n// module id = 140\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/api/openWeatherMap.jsx?");
+eval("\n\nvar axios = __webpack_require__(122);\n\nvar OPEM_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=a1d8ead71fc748d679a64544da008147&units=imperial';\n\nmodule.exports = {\n    getTemp: function getTemp(location) {\n        var encodedLocation = encodeURIComponent(location);\n        var requestUrl = OPEM_WEATHER_MAP_URL + '&q=' + encodedLocation;\n\n        return axios.get(requestUrl).then(function (res) {\n            if (res.data.cod && res.data.message) {\n                throw new Error(res.data.messaage);\n            } else {\n                return res.data.main.temp;\n            }\n        }, function (error) {\n            throw new Error(error.data.messaage);\n        });\n    }\n};\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/api/openWeatherMap.jsx\n// module id = 140\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/api/openWeatherMap.jsx?");
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(5);\n\nvar _require = __webpack_require__(73),\n    Link = _require.Link,\n    IndexLink = _require.IndexLink;\n\nvar Navigation = React.createClass({\n    displayName: 'Navigation',\n\n    render: function render() {\n        return React.createElement(\n            'div',\n            null,\n            React.createElement(\n                'h2',\n                null,\n                'Navigation Component'\n            ),\n            React.createElement(\n                IndexLink,\n                { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },\n                'Get Weather'\n            ),\n            React.createElement(\n                IndexLink,\n                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },\n                'About'\n            ),\n            React.createElement(\n                IndexLink,\n                { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },\n                'Examples'\n            )\n        );\n    }\n});\n\nmodule.exports = Navigation;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Navigation.jsx\n// module id = 141\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/Navigation.jsx?");
+eval("\n\nvar React = __webpack_require__(5);\n\nvar _require = __webpack_require__(73),\n    Link = _require.Link,\n    IndexLink = _require.IndexLink;\n\nvar Navigation = function Navigation() {\n    return React.createElement(\n        'div',\n        null,\n        React.createElement(\n            'h2',\n            null,\n            'Navigation Component'\n        ),\n        React.createElement(\n            IndexLink,\n            {\n                to: '/',\n                activeClassName: 'active',\n                activeStyle: {\n                    fontWeight: 'bold'\n                } },\n            'Get Weather'\n        ),\n        React.createElement(\n            IndexLink,\n            {\n                to: '/about',\n                activeClassName: 'active',\n                activeStyle: {\n                    fontWeight: 'bold'\n                } },\n            'About'\n        ),\n        React.createElement(\n            IndexLink,\n            {\n                to: '/examples',\n                activeClassName: 'active',\n                activeStyle: {\n                    fontWeight: 'bold'\n                } },\n            'Examples'\n        )\n    );\n};\n\nmodule.exports = Navigation;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/Navigation.jsx\n// module id = 141\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/Navigation.jsx?");
 
 /***/ }),
 /* 142 */
@@ -1070,7 +1070,7 @@ eval("\n\nvar React = __webpack_require__(5);\n\nvar WeatherForm = React.createC
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(5);\n\nvar WeatherMessage = React.createClass({\n    displayName: 'WeatherMessage',\n\n    render: function render() {\n        var _props = this.props,\n            temp = _props.temp,\n            location = _props.location;\n\n        return React.createElement(\n            'h5',\n            null,\n            'it is ',\n            temp,\n            ' degrees in ',\n            location\n        );\n    }\n});\n\nmodule.exports = WeatherMessage;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/WeatherMessage.jsx\n// module id = 143\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/WeatherMessage.jsx?");
+eval("\n\nvar React = __webpack_require__(5);\n\nvar WeatherMessage = function WeatherMessage(_ref) {\n    var temp = _ref.temp,\n        location = _ref.location;\n\n    return React.createElement(\n        'h5',\n        null,\n        'it is ',\n        temp,\n        ' degrees in ',\n        location\n    );\n};\n\nmodule.exports = WeatherMessage;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/WeatherMessage.jsx\n// module id = 143\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/WeatherMessage.jsx?");
 
 /***/ }),
 /* 144 */
