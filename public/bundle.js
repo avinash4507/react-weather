@@ -889,7 +889,7 @@ eval("/**\n * Copyright 2013-present, Facebook, Inc.\n * All rights reserved.\n 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(5);\nvar About = function About(props) {\n    return React.createElement(\n        'h1',\n        null,\n        'About Component'\n    );\n};\n\nmodule.exports = About;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/About.jsx\n// module id = 117\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/About.jsx?");
+eval("\n\nvar React = __webpack_require__(5);\nvar About = function About(props) {\n    return React.createElement(\n        'h1',\n        null,\n        'About'\n    );\n};\n\nmodule.exports = About;\n\n//////////////////\n// WEBPACK FOOTER\n// ./app/components/About.jsx\n// module id = 117\n// module chunks = 0\n\n//# sourceURL=webpack:///./app/components/About.jsx?");
 
 /***/ }),
 /* 118 */
