@@ -6,17 +6,17 @@ module.exports = {
     getTemp: location => {
         var encodedLocation = encodeURIComponent(location);
         var requestUrl = `${OPEM_WEATHER_MAP_URL}&q=${encodedLocation}`
-
+        debugger
         return axios
             .get(requestUrl)
-            .then(res => {
+            .then(res => { 
                 if (res.data.cod && res.data.message) {
                     throw new Error(res.data.message);
                 } else {
                     return res.data.main.temp;
                 }
             }, error => {
-                throw new Error(error.message)
+                throw new Error('unable to fetch weather for that location')
             })
     }
 };
