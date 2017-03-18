@@ -6,7 +6,6 @@ module.exports = {
     getTemp: location => {
         var encodedLocation = encodeURIComponent(location);
         var requestUrl = `${OPEM_WEATHER_MAP_URL}&q=${encodedLocation}`
-        debugger
         return axios
             .get(requestUrl)
             .then(res => { 
